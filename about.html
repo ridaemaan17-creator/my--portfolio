@@ -1,0 +1,1116 @@
+<html>
+
+<head>
+
+     
+    <title>Emaan Fatima - About</title>
+
+
+   
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --bg: #0d181e;
+    --card: #14242c;
+    --card-border: #1d353f;
+    --blue: #0796d5;
+    --text: #f5f7f8;
+    --muted: #aebbc1;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+
+    height: 80px;
+
+    flex-shrink: 0;
+}
+
+
+nav {
+    max-width: 1110px;
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.nav-left a {
+    position: relative;
+
+    color: #f3f5f6;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.nav-left a:hover {
+    color: var(--blue);
+}
+
+
+/* ACTIVE */
+
+.nav-left a.active {
+    color: var(--blue);
+}
+
+
+.nav-left a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -12px;
+
+    width: 25px;
+
+    height: 2px;
+
+    background: var(--blue);
+}
+
+
+/* DROPDOWN */
+
+.dropdown {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.dropdown i {
+    font-size: 10px;
+}
+
+
+/* =========================
+   HEADER SOCIALS
+========================= */
+
+.socials {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.socials a {
+    color: #dce3e7;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.socials a:hover {
+    color: var(--blue);
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 48px 20px 35px;
+}
+
+
+/* =========================
+   ABOUT HEADING
+========================= */
+
+.about-heading {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.about-heading h1 {
+    font-size: 40px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.about-heading h1::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    background: var(--blue);
+
+    margin: 12px auto 0;
+
+    border-radius: 5px;
+}
+
+
+.about-heading p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ABOUT CARD
+========================= */
+
+.about-card {
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    padding: 25px 30px;
+
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+
+.about-card:hover {
+    border-color: rgba(7,150,213,0.45);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+
+.about-card p {
+    color: #c3cdd1;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 0 20px 50px;
+}
+
+
+/* SKILLS HEADING */
+
+.skills-title {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.skills-title h2 {
+    font-size: 27px;
+
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+
+.skills-title p {
+    max-width: 780px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SKILL CARDS
+========================= */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.skill-card {
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    transition: 0.3s ease;
+}
+
+
+.skill-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--blue);
+
+    box-shadow: 0 12px 25px rgba(0,0,0,0.22);
+}
+
+
+/* CARD TITLE */
+
+.skill-card h3 {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    margin-bottom: 11px;
+}
+
+
+/* CARD TEXT */
+
+.skill-card p {
+    color: #9eabb1;
+
+    font-size: 11px;
+
+    line-height: 1.65;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SKILL INFO
+========================= */
+
+.skill-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+
+.skill-info span {
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+    width: 100%;
+
+    height: 6px;
+
+    background: #26383f;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    height: 100%;
+
+    background: var(--blue);
+
+    border-radius: 20px;
+}
+
+
+/* SKILL LEVELS */
+
+.html {
+    width: 90%;
+}
+
+
+.css {
+    width: 85%;
+}
+
+
+.javascript {
+    width: 75%;
+}
+
+
+.photoshop {
+    width: 55%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+#footer {
+    width: 100%;
+
+    text-align: center;
+
+    background: var(--bg);
+
+    padding: 30px 0 35px;
+
+    margin-top: auto;
+
+    flex-shrink: 0;
+}
+
+
+/* FOOTER SOCIALS */
+
+.footer-socials {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 26px;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-socials a {
+    color: #ffffff;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.footer-socials a:hover {
+    color: var(--blue);
+}
+
+
+/* COPYRIGHT */
+
+.copyright {
+    color: #ffffff;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.copyright strong {
+    margin: 0 4px;
+}
+
+
+/* CREDITS */
+
+.credits {
+    color: #ffffff;
+
+    font-size: 11px;
+}
+
+
+.credits a {
+    color: var(--blue);
+
+    text-decoration: none;
+}
+
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SCROLL TOP
+========================= */
+
+#scroll-top {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 20px;
+
+    width: 44px;
+
+    height: 44px;
+
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+
+    z-index: 1000;
+}
+
+
+#scroll-top:hover {
+    background: #0785bd;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        max-width: 92%;
+    }
+
+
+    .about {
+        max-width: 92%;
+    }
+
+
+    .skills {
+        max-width: 92%;
+    }
+
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        height: auto;
+
+        padding: 20px 0;
+    }
+
+
+    nav {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .nav-left {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .socials {
+        display: none;
+    }
+
+
+    .about {
+        padding-top: 35px;
+    }
+
+
+    .about-heading h1 {
+        font-size: 34px;
+    }
+
+
+    .about-card {
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .nav-left {
+        gap: 12px;
+    }
+
+
+    .nav-left a {
+        font-size: 12px;
+    }
+
+
+    .about-heading h1 {
+        font-size: 30px;
+    }
+
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .skills {
+        padding-bottom: 35px;
+    }
+
+
+    .footer-socials {
+        gap: 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="nav-left">
+
+            <a href="home.html">
+                Home
+            </a>
+
+
+            <!-- ABOUT ACTIVE -->
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+
+            <a href="resume.html">
+                Resume
+            </a>
+
+
+            <a href="services.html">
+                Services
+            </a>
+
+
+            <a href="portfolio.html">
+                Portfolio
+            </a>
+
+
+            <a href="dropdown.html" class="dropdown">
+
+                Dropdown
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <!-- HEADER SOCIALS -->
+
+        <div class="socials">
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<main class="about">
+
+
+    <!-- HEADING -->
+
+    <div class="about-heading">
+
+        <h1>
+            About Me
+        </h1>
+
+        <p>
+            Get to know more about my skills, interests and
+            journey in Information Technology.
+        </p>
+
+    </div>
+
+
+    <!-- ABOUT TEXT -->
+
+    <div class="about-card">
+
+        <p>
+            I enjoy learning new technologies and turning ideas
+            into simple, useful, and creative digital experiences.
+            I have experience with HTML, CSS, JavaScript,
+            programming, and computer applications, and I'm always
+            looking for opportunities to improve my skills and gain
+            practical experience.
+            My goal is to become a skilled IT professional and
+            continue growing through new projects, challenges,
+            and learning opportunities.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section class="skills">
+
+
+    <div class="skills-title">
+
+        <h2>
+            My Skills
+        </h2>
+
+        <p>
+            I have developed skills in HTML, CSS, JavaScript,
+            programming, and computer applications. I enjoy creating
+            websites and learning how to make them interactive,
+            attractive, and user-friendly. I am continuously
+            improving my technical skills through academic and
+            personal projects.
+        </p>
+
+    </div>
+
+
+
+    <div class="skills-container">
+
+
+        <!-- HTML -->
+
+        <div class="skill-card">
+
+            <h3>
+                HTML
+            </h3>
+
+            <p>
+                I can create structured and well-organized
+                web pages using HTML.
+            </p>
+
+            <div class="skill-info">
+
+                <span>
+                    HTML
+                </span>
+
+                <span>
+                    90%
+                </span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar html"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CSS -->
+
+        <div class="skill-card">
+
+            <h3>
+                CSS
+            </h3>
+
+            <p>
+                I use CSS to design attractive, responsive
+                and user-friendly websites.
+            </p>
+
+            <div class="skill-info">
+
+                <span>
+                    CSS
+                </span>
+
+                <span>
+                    85%
+                </span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar css"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JAVASCRIPT -->
+
+        <div class="skill-card">
+
+            <h3>
+                JavaScript
+            </h3>
+
+            <p>
+                I am learning JavaScript to add interaction
+                and functionality to websites.
+            </p>
+
+            <div class="skill-info">
+
+                <span>
+                    JavaScript
+                </span>
+
+                <span>
+                    75%
+                </span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar javascript"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PHOTOSHOP -->
+
+        <div class="skill-card">
+
+            <h3>
+                Photoshop
+            </h3>
+
+            <p>
+                I have basic knowledge of Photoshop for
+                image editing and creative design.
+            </p>
+
+            <div class="skill-info">
+
+                <span>
+                    Photoshop
+                </span>
+
+                <span>
+                    55%
+                </span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar photoshop"></div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="footer">
+
+    <div class="container">
+
+
+        <div class="footer-socials">
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © Copyright
+
+            <strong>
+                Portfolio
+            </strong>
+
+            All Rights Reserved
+
+        </div>
+
+
+        <div class="credits">
+
+            Designed by
+
+            <a href="#">
+                Emaan Fatima
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- SCROLL TOP -->
+
+<a href="#" id="scroll-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</a>
+
+
+</body>
+
+</html>

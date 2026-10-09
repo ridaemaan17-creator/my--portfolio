@@ -1,0 +1,757 @@
+<html>
+<head>
+   
+    <title>Emaan Fatima - Portfolio</title>
+
+  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0d181e;
+            --card: #14232b;
+            --blue: #0796d5;
+            --text: #f5f7f8;
+            --muted: #aab8c0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+
+        header {
+            width: 100%;
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        nav {
+            max-width: 1110px;
+            height: 100%;
+            margin: auto;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-left a {
+            position: relative;
+            color: #f3f5f6;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-left a:hover,
+        .nav-left a.active {
+            color: var(--blue);
+        }
+
+        .nav-left a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -13px;
+            width: 25px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .dropdown {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .dropdown i {
+            font-size: 10px;
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .socials a {
+            color: #dce3e7;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--blue);
+        }
+
+        /* PORTFOLIO SECTION */
+
+        .portfolio {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 30px 20px 55px;
+            flex: 1;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h1 {
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .section-heading h1::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 3px;
+            border-radius: 5px;
+            background: var(--blue);
+            margin: 12px auto 0;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* FILTER BUTTONS */
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .filter-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: transparent;
+            color: #c7d0d5;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--blue);
+            color: white;
+        }
+
+        /* PROJECT GRID */
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.035);
+            border-radius: 9px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(7,150,213,0.55);
+        }
+
+        .portfolio-card.hidden {
+            display: none;
+        }
+
+        .project-image {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+            background: #1b303a;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-card:hover .project-image img {
+            transform: scale(1.06);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            background: rgba(7, 150, 213, 0.72);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .portfolio-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay a {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            background: rgba(13, 24, 30, 0.8);
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .image-overlay a:hover {
+            background: white;
+            color: var(--blue);
+        }
+
+        .project-info {
+            padding: 18px;
+        }
+
+        .project-info h3 {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .project-info p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 13px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-tags span {
+            font-size: 10px;
+            color: var(--blue);
+            background: rgba(7,150,213,0.09);
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        /* VIEW ALL BUTTON */
+
+        .view-all {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 0;
+            padding: 13px 25px;
+            background: var(--blue);
+            color: white;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .view-all:hover {
+            background: #087db0;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        #footer {
+            width: 100%;
+            text-align: center;
+            padding: 32px 20px 35px;
+            margin-top: auto;
+            background: var(--bg);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials a {
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--blue);
+        }
+
+        .copyright {
+            color: white;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .copyright strong {
+            margin: 0 4px;
+        }
+
+        .credits {
+            color: white;
+            font-size: 12px;
+        }
+
+        .credits a {
+            color: var(--blue);
+        }
+
+        .credits a:hover {
+            text-decoration: underline;
+        }
+
+        /* SCROLL TO TOP */
+
+        #scroll-top {
+            position: fixed;
+            right: 25px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--blue);
+            color: white;
+            border-radius: 50%;
+            font-size: 18px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        #scroll-top:hover {
+            background: #087db0;
+            transform: translateY(-3px);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 900px) {
+            nav {
+                max-width: 100%;
+            }
+
+            .nav-left {
+                gap: 15px;
+            }
+
+            .nav-left a {
+                font-size: 12px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-image {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                height: auto;
+                padding: 22px 0;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 22px;
+            }
+
+            .nav-left {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px;
+                padding: 0 12px;
+            }
+
+            .nav-left a {
+                font-size: 12px;
+            }
+
+            .socials {
+                display: none;
+            }
+
+            .portfolio {
+                padding: 30px 16px 45px;
+            }
+
+            .section-heading h1 {
+                font-size: 30px;
+            }
+
+            .section-heading p {
+                font-size: 12px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-image {
+                height: 230px;
+            }
+
+            .filter-btn {
+                padding: 9px 13px;
+            }
+
+            #footer {
+                padding-top: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+
+                <a href="#" class="dropdown">
+                    Dropdown <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="socials">
+                <a href="" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PORTFOLIO -->
+    <main class="portfolio">
+
+        <div class="section-heading">
+            <h1>Portfolio</h1>
+            <p>
+                Explore my projects and creative work in web development,
+                design, and technology. Each project represents an opportunity
+                to learn, solve problems, and create something useful.
+            </p>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Design</button>
+            <button class="filter-btn" data-filter="development">Development</button>
+            <button class="filter-btn" data-filter="design">Graphic Design</button>
+            <button class="filter-btn" data-filter="creative">Creative</button>
+        </div>
+
+        <!-- PROJECT CARDS -->
+        <div class="portfolio-grid">
+
+            <!-- PROJECT 1 -->
+            <article class="portfolio-card" data-category="web">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80"
+                         alt="Skincare product website design" loading="lazy">
+
+                    <div class="image-overlay">
+                        <a href="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=85"
+                           target="_blank" rel="noopener" aria-label="View project image">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                        <a href="" target="_blank" rel="noopener"
+                           aria-label="Project link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>Beauty Website Design</h3>
+                    <p>A clean and attractive concept for a beauty and skincare brand.</p>
+                    <div class="project-tags">
+                        <span>Web Design</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 2 -->
+            <article class="portfolio-card" data-category="creative">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80"
+                         alt="Green plant and minimal product styling" loading="lazy">
+
+                    <div class="image-overlay">
+                        <a href="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=85"
+                           target="_blank" rel="noopener" aria-label="View project image">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                        <a href="" target="_blank" rel="noopener"
+                           aria-label="Project link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>Green Living Concept</h3>
+                    <p>A fresh visual concept inspired by plants and sustainable living.</p>
+                    <div class="project-tags">
+                        <span>Creative</span>
+                        <span>Branding</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 3 -->
+            <article class="portfolio-card" data-category="design">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+                         alt="Creative design workspace" loading="lazy">
+
+                    <div class="image-overlay">
+                        <a href="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85"
+                           target="_blank" rel="noopener" aria-label="View project image">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                        <a href="" target="_blank" rel="noopener"
+                           aria-label="Project link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>Creative Design Project</h3>
+                    <p>A modern creative concept focused on presentation and visual style.</p>
+                    <div class="project-tags">
+                        <span>Graphic Design</span>
+                        <span>Creative</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 4 -->
+            <article class="portfolio-card" data-category="development">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                         alt="Website analytics dashboard" loading="lazy">
+
+                    <div class="image-overlay">
+                        <a href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85"
+                           target="_blank" rel="noopener" aria-label="View project image">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                        <a href="" target="_blank" rel="noopener"
+                           aria-label="Project link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>Business Dashboard</h3>
+                    <p>A dashboard concept for presenting data in a clear, organized way.</p>
+                    <div class="project-tags">
+                        <span>Development</span>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 5 -->
+            <article class="portfolio-card" data-category="web">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=800&q=80"
+                         alt="Minimal product and interior design" loading="lazy">
+
+                    <div class="image-overlay">
+                        <a href="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1200&q=85"
+                           target="_blank" rel="noopener" aria-label="View project image">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                        <a href="" target="_blank" rel="noopener"
+                           aria-label="Project link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>Product Landing Page</h3>
+                    <p>A simple landing page concept with a minimal and elegant style.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 6 -->
+            <article class="portfolio-card" data-category="design">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=80"
+                         alt="Modern home decor and creative styling" loading="lazy">
+
+                    <div class="image-overlay">
+                        <a href="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85"
+                           target="_blank" rel="noopener" aria-label="View project image">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        </a>
+                        <a href="" target="_blank" rel="noopener"
+                           aria-label="Project link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>Modern Visual Design</h3>
+                    <p>A modern design concept using balanced layouts and soft colors.</p>
+                    <div class="project-tags">
+                        <span>Graphic Design</span>
+                        <span>Branding</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <a href="contact.html" class="view-all">View All Case Studies</a>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+
+        <div class="footer-socials">
+            <a href="" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <div class="copyright">
+            © Copyright <strong>Portfolio</strong> All Rights Reserved
+        </div>
+
+        <div class="credits">
+            Designed by <a href="index.html">Emaan Fatima</a>
+        </div>
+
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <a href="#top" id="scroll-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- FILTER JAVASCRIPT -->
+    <script>
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".portfolio-card");
+
+        filterButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+
+                filterButtons.forEach(function(btn) {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                const selectedFilter = button.dataset.filter;
+
+                projectCards.forEach(function(card) {
+                    const category = card.dataset.category;
+
+                    if (selectedFilter === "all" || category === selectedFilter) {
+                        card.classList.remove("hidden");
+                    } else {
+                        card.classList.add("hidden");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+```

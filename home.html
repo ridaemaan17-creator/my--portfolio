@@ -1,0 +1,888 @@
+<html>
+
+<head>
+  
+  <title>Emaan Fatima - Portfolio</title>
+
+  
+  
+  
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+   
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0d181e;
+      --card: #14232b;
+      --blue: #0796d5;
+      --text: #f5f7f8;
+      --muted: #d9e0e4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+
+    
+
+    header {
+      width: 100%;
+      height: 80px;
+    }
+
+    nav {
+      max-width: 1110px;
+      height: 100%;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-left a {
+      position: relative;
+
+      color: #f3f5f6;
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      transition: 0.3s;
+    }
+
+    .nav-left a:hover,
+    .nav-left a.active {
+      color: var(--blue);
+    }
+
+    .nav-left a.active::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -13px;
+
+      width: 25px;
+      height: 2px;
+
+      background: var(--blue);
+    }
+
+    .dropdown {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .dropdown i {
+      font-size: 10px;
+    }
+
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .socials a {
+      color: #dce3e7;
+      font-size: 14px;
+
+      text-decoration: none;
+
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: var(--blue);
+    }
+
+
+  
+
+    .hero {
+      max-width: 1110px;
+
+      min-height: calc(100vh - 80px - 110px);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1.05fr 0.95fr;
+
+      align-items: center;
+
+      gap: 40px;
+
+      padding-bottom: 30px;
+    }
+
+
+   
+    .hero-content {
+      padding-top: 5px;
+    }
+
+    .hero-title {
+      font-size: 56px;
+
+      line-height: 1.1;
+
+      font-weight: 800;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 16px;
+    }
+
+    .blue {
+      color: var(--blue);
+    }
+
+    .subtitle {
+      font-size: 20px;
+
+      line-height: 1.5;
+
+      margin-bottom: 22px;
+
+      color: #f0f3f5;
+
+      font-weight: 400;
+    }
+
+    .subtitle span {
+      color: var(--blue);
+
+      font-weight: 500;
+    }
+
+    .description {
+      max-width: 550px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      margin-bottom: 30px;
+    }
+
+
+   
+    .buttons {
+      display: flex;
+
+      gap: 16px;
+
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      min-width: 150px;
+
+      height: 50px;
+
+      padding: 0 22px;
+
+      border-radius: 28px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0785bd;
+
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--blue);
+
+      color: var(--blue);
+
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--blue);
+
+      color: white;
+
+      transform: translateY(-2px);
+    }
+
+
+    
+    .hero-image {
+      position: relative;
+
+      width: 100%;
+
+      height: 430px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+    }
+
+    .image-box {
+      position: relative;
+
+      width: 450px;
+
+      height: 430px;
+
+      border-radius: 20px 20px 0 0;
+
+      overflow: hidden;
+
+      background: #071218;
+    }
+
+    .image-box img {
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+
+    .floating-card {
+      position: absolute;
+
+      height: 66px;
+
+      padding: 0 20px;
+
+      background: var(--card);
+
+      border-radius: 15px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      color: #e9eef1;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+      z-index: 5;
+    }
+
+    .floating-card i {
+      color: var(--blue);
+
+      font-size: 23px;
+    }
+
+    .design-card {
+      right: -25px;
+
+      top: 37px;
+
+      width: 123px;
+    }
+
+    .code-card {
+      left: -45px;
+
+      bottom: 115px;
+
+      width: 111px;
+    }
+
+    .ideas-card {
+      right: -5px;
+
+      bottom: 100px;
+
+      width: 114px;
+    }
+
+
+    
+
+    #footer {
+      width: 100%;
+
+      text-align: center;
+
+      padding: 20px 0 18px;
+
+      background: var(--bg);
+    }
+
+    .footer-socials {
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 22px;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-socials a {
+      color: white;
+
+      font-size: 15px;
+
+      text-decoration: none;
+
+      transition: 0.3s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--blue);
+
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      color: white;
+
+      font-size: 13px;
+
+      margin-bottom: 15px;
+    }
+
+    .copyright strong {
+      margin: 0 5px;
+    }
+
+    .credits {
+      color: white;
+
+      font-size: 12px;
+    }
+
+    .credits a {
+      color: var(--blue);
+
+      text-decoration: none;
+    }
+
+    .credits a:hover {
+      text-decoration: underline;
+    }
+
+
+   
+
+    #scroll-top {
+      position: fixed;
+
+      right: 25px;
+
+      bottom: 20px;
+
+      width: 45px;
+
+      height: 45px;
+
+      border-radius: 50%;
+
+      background: var(--blue);
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-size: 18px;
+
+      transition: 0.3s;
+    }
+
+    #scroll-top:hover {
+      background: #0785bd;
+
+      transform: translateY(-3px);
+    }
+
+
+
+    @media (max-width: 1150px) {
+
+      nav,
+      .hero {
+        max-width: 92%;
+      }
+
+      .design-card {
+        right: -5px;
+      }
+
+      .code-card {
+        left: -10px;
+      }
+
+      .ideas-card {
+        right: -5px;
+      }
+    }
+
+
+  
+
+    @media (max-width: 900px) {
+
+      header {
+        height: auto;
+
+        padding: 20px 0;
+      }
+
+      nav {
+        flex-direction: column;
+
+        gap: 25px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 50px;
+
+        min-height: auto;
+
+        padding-bottom: 60px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .description {
+        margin-left: auto;
+
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
+
+      #footer {
+        padding-top: 30px;
+      }
+    }
+
+
+
+    @media (max-width: 600px) {
+
+      .nav-left {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      .socials {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 42px;
+
+        letter-spacing: -1px;
+      }
+
+      .subtitle {
+        font-size: 19px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .buttons {
+        flex-direction: column;
+
+        align-items: center;
+      }
+
+      .btn {
+        width: 180px;
+      }
+
+      .image-box {
+        width: 85%;
+
+        height: 400px;
+      }
+
+      .floating-card {
+        transform: scale(0.85);
+      }
+
+      .code-card {
+        left: 0;
+      }
+
+      .design-card {
+        right: 0;
+      }
+
+      .ideas-card {
+        right: -5px;
+      }
+
+      #scroll-top {
+        right: 15px;
+
+        bottom: 15px;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+ 
+
+  <header>
+
+    <nav>
+
+      <div class="nav-left">
+
+        <a href="home.html" class="active">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="resume.html">
+          Resume
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="portfolio.html">
+          Portfolio
+        </a>
+
+        <a href="drop.html" class="dropdown">
+          Dropdown
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+ 
+
+      <div class="socials">
+
+        <a href="#">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+
+  <main class="hero">
+
+
+   
+
+    <section class="hero-content">
+
+      <h1 class="hero-title">
+
+        Hello, I'm
+
+        <span class="blue">
+          Emaan<br>
+          Fatima
+        </span>
+
+      </h1>
+
+
+      <div class="subtitle">
+
+        Creative
+        <span>
+          Student
+        </span>
+
+      </div>
+
+
+      <p class="description">
+
+        I'm a 2nd-year student passionate about technology,
+        web development, and learning new skills. I have completed
+        my Certificate in Information Technology (CIT) and am
+        currently pursuing a Diploma in Information Technology (DIT).
+        I'm building my skills in HTML, CSS, JavaScript, programming,
+        and computer applications, while working on personal and
+        academic projects to gain practical experience. I'm always
+        eager to learn, improve, and turn ideas into useful digital
+        experiences.
+
+      </p>
+
+
+     
+
+      <div class="buttons">
+
+        <a href="#" class="btn btn-primary">
+          View My Work
+        </a>
+
+        <a href="#" class="btn btn-outline">
+          Get In Touch
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+ 
+
+    <section class="hero-image">
+
+
+     
+
+      <div class="image-box">
+
+        <img
+          src="pic/image12.png"
+          alt="Emaan Fatima"
+        >
+
+      </div>
+
+
+      <div class="floating-card design-card">
+
+        <i class="fa-solid fa-palette"></i>
+
+        <span>
+          Design
+        </span>
+
+      </div>
+
+
+ 
+
+      <div class="floating-card code-card">
+
+        <i class="fa-solid fa-code"></i>
+
+        <span>
+          Code
+        </span>
+
+      </div>
+
+
+   
+
+      <div class="floating-card ideas-card">
+
+        <i class="fa-regular fa-lightbulb"></i>
+
+        <span>
+          Ideas
+        </span>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+
+
+  <footer id="footer">
+
+    <div class="container">
+
+
+   
+      <div class="footer-socials">
+
+        <a href="#">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © Copyright
+
+        <strong>
+         Portfolio
+        </strong>
+
+        All Rights Reserved
+
+      </div>
+
+
+
+      <div class="credits">
+
+        Designed by
+
+        <a href="#">
+         Emaan Fatima
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+
+
+  <a href="#" id="scroll-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+  </a>
+
+
+</body>
+
+</html>

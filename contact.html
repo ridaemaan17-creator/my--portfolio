@@ -1,0 +1,545 @@
+<html>
+<head>
+   
+    <title>Emaan Fatima - Contact</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0d181e;
+            --card: #14232b;
+            --blue: #0796d5;
+            --text: #f5f7f8;
+            --muted: #b7c4cb;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        header {
+            height: 65px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        nav {
+            max-width: 1110px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-left a {
+            position: relative;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-left a:hover,
+        .nav-left a.active {
+            color: var(--blue);
+        }
+
+        .nav-left a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 25px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .dropdown {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dropdown i {
+            font-size: 10px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .socials a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--blue);
+        }
+
+        /* CONTACT SECTION */
+        main {
+            width: 100%;
+            max-width: 1110px;
+            margin: 0 auto;
+            padding: 25px 0 35px;
+            flex: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-title h1::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 3px;
+            background: var(--blue);
+            margin: 12px auto 0;
+            border-radius: 5px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 0.85fr 1.35fr;
+            gap: 28px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid #1b3039;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: #254654;
+        }
+
+        .contact-card h2 {
+            font-size: 23px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-intro {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        /* CONTACT DETAILS */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item > i {
+            color: var(--blue);
+            font-size: 20px;
+            width: 23px;
+            padding-top: 3px;
+        }
+
+        .contact-item h3 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .contact-item p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        /* FORM */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: #101d24;
+            border: 1px solid #40515a;
+            border-radius: 6px;
+            color: white;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 2px rgba(7, 150, 213, 0.12);
+        }
+
+        .contact-form textarea {
+            height: 145px;
+            resize: vertical;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #b7c4cb;
+        }
+
+        .submit-btn {
+            align-self: center;
+            border: none;
+            border-radius: 25px;
+            padding: 13px 30px;
+            background: var(--blue);
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #0785bd;
+            transform: translateY(-2px);
+        }
+
+        #form-message {
+            text-align: center;
+            font-size: 13px;
+            color: #67d6a0;
+            display: none;
+        }
+
+        /* FOOTER */
+        #footer {
+            width: 100%;
+            text-align: center;
+            padding: 25px 15px 28px;
+            background: var(--bg);
+            margin-top: auto;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 17px;
+        }
+
+        .footer-socials a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--blue);
+        }
+
+        .copyright {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .copyright strong {
+            margin: 0 4px;
+        }
+
+        .credits {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .credits a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        /* SCROLL TOP */
+        #scroll-top {
+            position: fixed;
+            right: 22px;
+            bottom: 20px;
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        #scroll-top:hover {
+            background: #0785bd;
+            transform: translateY(-3px);
+        }
+
+        /* TABLET */
+        @media (max-width: 1150px) {
+            nav,
+            main {
+                max-width: 92%;
+            }
+        }
+
+        @media (max-width: 800px) {
+            header {
+                height: auto;
+                padding: 20px 0;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-left {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .socials {
+                display: none;
+            }
+
+            main {
+                padding-top: 30px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 500px) {
+            .nav-left {
+                gap: 12px;
+            }
+
+            .nav-left a {
+                font-size: 12px;
+            }
+
+            .contact-card {
+                padding: 22px 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+
+                <a href="#" class="dropdown">
+                    Dropdown <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+
+            <div class="socials">
+                <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTACT CONTENT -->
+    <main>
+        <div class="section-title">
+            <h1>Contact</h1>
+            <p>
+                Have a question, an idea, or a project in mind? I'd love to hear
+                from you. Feel free to contact me and let's discuss how we can
+                work together.
+            </p>
+        </div>
+
+        <div class="contact-container">
+
+            <!-- CONTACT INFORMATION -->
+            <section class="contact-card">
+                <h2>Contact Info</h2>
+                <p class="card-intro">
+                    Feel free to get in touch with me using the information below.
+                </p>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h3>My Location</h3>
+                        <p>Pakistan, Karachi PNAD Maripur </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h3>Phone Number</h3>
+                        <p>03035008643</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div>
+                        <h3>Email Address</h3>
+                        <p>emaanfatima27@gmail.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT FORM -->
+            <section class="contact-card">
+                <h2>Get In Touch</h2>
+                <p class="card-intro">
+                    Send me a message using the form below. I look forward to
+                    hearing from you.
+                </p>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+
+                    <input type="text" name="subject" placeholder="Subject" required>
+
+                    <textarea name="message" placeholder="Message" required></textarea>
+
+                   <button type="submit" class="submit-btn">Send Message</button>
+
+                    <p id="form-message">
+                       
+                    </p>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+ 
+    <footer id="footer">
+        <div class="footer-socials">
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <div class="copyright">
+            © Copyright <strong>Portfolio</strong> All Rights Reserved
+        </div>
+
+        <div class="credits">
+            Designed by <a href="#">Emaan Fatima</a>
+        </div>
+    </footer>
+
+    <!-- SCROLL TOP -->
+    <a href="#top" id="scroll-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("form-message").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>

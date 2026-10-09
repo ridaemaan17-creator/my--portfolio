@@ -1,0 +1,986 @@
+<html>
+
+<head>
+
+    
+    <title>Emaan Fatima - Services</title>
+
+
+  
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           COLORS
+        ========================= */
+
+        :root {
+            --bg: #0d181e;
+            --card: #14232b;
+            --blue: #0796d5;
+            --text: #f5f7f8;
+            --muted: #aeb9be;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: "Inter", sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+
+            height: 80px;
+
+            flex-shrink: 0;
+        }
+
+
+        nav {
+            max-width: 1110px;
+
+            height: 100%;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        /* LEFT MENU */
+
+        .nav-left {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .nav-left a {
+            position: relative;
+
+            color: #f3f5f6;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-left a:hover {
+            color: var(--blue);
+        }
+
+
+        /* ACTIVE SERVICES */
+
+        .nav-left a.active {
+            color: var(--blue);
+        }
+
+
+        .nav-left a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -13px;
+
+            width: 25px;
+
+            height: 2px;
+
+            background: var(--blue);
+        }
+
+
+        /* DROPDOWN */
+
+        .dropdown {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+        }
+
+
+        .dropdown i {
+            font-size: 10px;
+        }
+
+
+        /* HEADER SOCIALS */
+
+        .socials {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .socials a {
+            color: #dce3e7;
+
+            font-size: 16px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .socials a:hover {
+            color: var(--blue);
+        }
+
+
+
+        /* =========================
+           SERVICES SECTION
+        ========================= */
+
+        .services {
+            width: 100%;
+
+            max-width: 1120px;
+
+            margin: 0 auto;
+
+            padding: 45px 20px 55px;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .services-heading {
+            text-align: center;
+
+            margin-bottom: 38px;
+        }
+
+
+        .services-heading h1 {
+            font-size: 38px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+
+        .services-heading p {
+            max-width: 680px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+
+        /* =========================
+           SERVICES GRID
+        ========================= */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 16px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+
+
+        /* =========================
+           SERVICE CARD
+        ========================= */
+
+        .service-card {
+            background: var(--card);
+
+            border-radius: 5px;
+
+            padding: 22px 24px;
+
+            min-height: 115px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            transition: 0.3s ease;
+
+            border: 1px solid transparent;
+        }
+
+
+        .service-card:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(7, 150, 213, 0.35);
+
+            background: #172932;
+        }
+
+
+
+        /* =========================
+           SERVICE ICON
+        ========================= */
+
+        .service-icon {
+            width: 28px;
+
+            min-width: 28px;
+
+            color: var(--blue);
+
+            font-size: 20px;
+
+            padding-top: 2px;
+
+            text-align: center;
+        }
+
+
+
+        /* =========================
+           SERVICE CONTENT
+        ========================= */
+
+        .service-content h3 {
+            color: #ffffff;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 9px;
+        }
+
+
+        .service-content p {
+            color: #aeb9be;
+
+            font-size: 10px;
+
+            line-height: 1.65;
+
+            margin-bottom: 9px;
+        }
+
+
+        .service-content a {
+            color: var(--blue);
+
+            font-size: 9px;
+
+            text-decoration: none;
+
+            font-weight: 500;
+        }
+
+
+        .service-content a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        #footer {
+            width: 100%;
+
+            text-align: center;
+
+            background: var(--bg);
+
+            padding: 30px 0 35px;
+
+            margin-top: auto;
+
+            flex-shrink: 0;
+        }
+
+
+        /* FOOTER SOCIALS */
+
+        .footer-socials {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 28px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .footer-socials a {
+            color: #ffffff;
+
+            font-size: 16px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .footer-socials a:hover {
+            color: var(--blue);
+        }
+
+
+        /* COPYRIGHT */
+
+        .copyright {
+            color: #ffffff;
+
+            font-size: 12px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .copyright strong {
+            margin: 0 4px;
+        }
+
+
+        /* CREDITS */
+
+        .credits {
+            color: #ffffff;
+
+            font-size: 11px;
+        }
+
+
+        .credits a {
+            color: var(--blue);
+
+            text-decoration: none;
+        }
+
+
+        .credits a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* =========================
+           SCROLL TOP
+        ========================= */
+
+        #scroll-top {
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 20px;
+
+            width: 45px;
+
+            height: 45px;
+
+            background: var(--blue);
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+
+            z-index: 1000;
+        }
+
+
+        #scroll-top:hover {
+            background: #0785bd;
+
+            transform: translateY(-3px);
+        }
+
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1150px) {
+
+            nav {
+                max-width: 92%;
+            }
+
+            .services {
+                max-width: 95%;
+            }
+
+        }
+
+
+
+        @media (max-width: 800px) {
+
+            header {
+                height: auto;
+
+                padding: 20px 0;
+            }
+
+
+            nav {
+                flex-direction: column;
+
+                justify-content: center;
+
+                gap: 20px;
+            }
+
+
+            .nav-left {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .socials {
+                display: none;
+            }
+
+
+            .services {
+                padding: 40px 20px;
+            }
+
+
+            .services-heading h1 {
+                font-size: 32px;
+            }
+
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+
+        @media (max-width: 500px) {
+
+            .nav-left {
+                gap: 12px;
+            }
+
+
+            .nav-left a {
+                font-size: 13px;
+            }
+
+
+            .services-heading h1 {
+                font-size: 30px;
+            }
+
+
+            .service-card {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <nav>
+
+
+            <!-- LEFT MENU -->
+
+            <div class="nav-left">
+
+                <a href="home.html">
+                    Home
+                </a>
+
+
+                <a href="about.html">
+                    About
+                </a>
+
+
+                <a href="resume.html">
+                    Resume
+                </a>
+
+
+                <a href="services.html" class="active">
+                    Services
+                </a>
+
+
+                <a href="portfolio.html">
+                    Portfolio
+                </a>
+
+
+                <a href="dropdown.html" class="dropdown">
+
+                    Dropdown
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- HEADER SOCIALS -->
+
+            <div class="socials">
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <main class="services">
+
+
+        <!-- HEADING -->
+
+        <div class="services-heading">
+
+            <h1>
+                Services
+            </h1>
+
+            <p>
+                I provide a range of digital services including web
+                development, front-end development, responsive website
+                design, portfolio website creation, and basic UI design.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             SERVICE CARDS
+        ========================= -->
+
+        <div class="services-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Custom Web Development
+                    </h3>
+
+                    <p>
+                        I create clean, responsive and user-friendly
+                        websites using HTML, CSS and JavaScript.
+                    </p>
+
+                    <a href="#">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Mobile App Solutions
+                    </h3>
+
+                    <p>
+                        I create simple and practical digital solutions
+                        with a focus on usability and clean design.
+                    </p>
+
+                    <a href="#">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-pen-ruler"></i>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        UI/UX Design
+                    </h3>
+
+                    <p>
+                        I design simple and attractive interfaces with
+                        clear layouts and easy navigation.
+                    </p>
+
+                    <a href="#">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 4 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Digital Marketing
+                    </h3>
+
+                    <p>
+                        I have an interest in digital platforms and
+                        creating content that improves online presence.
+                    </p>
+
+                    <a href="#">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 5 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-cloud"></i>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Cloud Computing
+                    </h3>
+
+                    <p>
+                        I am developing knowledge of cloud technologies
+                        and modern computing solutions.
+                    </p>
+
+                    <a href="#">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 6 -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Cybersecurity Solutions
+                    </h3>
+
+                    <p>
+                        I am learning cybersecurity concepts and basic
+                        practices for safer digital environments.
+                    </p>
+
+                    <a href="#">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer id="footer">
+
+        <div class="container">
+
+
+            <div class="footer-socials">
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+            </div>
+
+
+            <div class="copyright">
+
+                © Copyright
+
+                <strong>
+                    Portfolio
+                </strong>
+
+                All Rights Reserved
+
+            </div>
+
+
+            <div class="credits">
+
+                Designed by
+
+                <a href="#">
+                    Emaan Fatima
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SCROLL TOP
+    ========================= -->
+
+    <a href="#" id="scroll-top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </a>
+
+
+</body>
+
+</html>
